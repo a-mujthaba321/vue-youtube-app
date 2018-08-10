@@ -1,19 +1,23 @@
 <template>
   <div class="container">
     <SearchBar @searchTermChange="onSearchTermChange"/>
-    <VideoList :videos="videos"/> 
+    <VideoList 
+      :videos="videos" 
+      @videoChange="onVideoChange"/> 
   </div>
 </template>
 <script>
 import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
 const YOUTUBE_KEY = "AIzaSyCXhMsWNEYzzWlWtlK2nqGWN7eGncsGPyg";
 export default {
   name: "App",
   components: {
     SearchBar,
-    VideoList
+    VideoList,
+    VideoDetail
   },
   data() {
     return {
@@ -34,6 +38,10 @@ export default {
         .then(response => {
           this.videos = response.data.items;
         });
+    },
+
+    onVideoChange(video) {
+      console.log(video.snippet.title);
     }
   }
 };
