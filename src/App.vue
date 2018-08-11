@@ -46,6 +46,7 @@ export default {
         })
         .then(response => {
           this.videos = response.data.items;
+          this.selectedVideo = response.data.items[0];
         });
     },
 

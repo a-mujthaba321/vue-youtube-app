@@ -9,7 +9,7 @@
       </div>
       <div 
         id="search-bar" 
-        class="col-md-8">
+        class="col-md-10">
         <input 
           placeholder="Search..." 
           @input="onInput">
