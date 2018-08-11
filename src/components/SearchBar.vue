@@ -1,7 +1,20 @@
 
 <template>
   <div>
-    <input @input="onInput">
+    <div class="row">
+      <div class="col-md-2">
+        <img 
+          class="img-responsive"
+          src="../../assets/images/youtubelogo-big.png">
+      </div>
+      <div 
+        id="search-bar" 
+        class="col-md-8">
+        <input 
+          placeholder="Search..." 
+          @input="onInput">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,11 +31,18 @@ export default {
 
 <style scoped>
 input {
-  width: 75%;
+  width: 100%;
 }
 
-div {
+img {
+  max-width: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#search-bar {
   text-align: center;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 </style>
